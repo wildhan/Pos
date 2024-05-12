@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/daftarUangMasukFragment">
+
+    <fragment
+        android:id="@+id/daftarUangMasukFragment"
+        android:name="com.example.pos.feature.uang_masuk.DaftarUangMasukFragment"
+        android:label="fragment_daftar_uang_masuk"
+        tools:layout="@layout/fragment_daftar_uang_masuk" >
+        <action
+            android:id="@+id/action_daftarUangMasukFragment_to_inputUangMasukFragment"
+            app:destination="@id/inputUangMasukFragment" />
+        <action
+            android:id="@+id/action_daftarUangMasukFragment_to_editUangMasukFragment"
+            app:destination="@id/editUangMasukFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inputUangMasukFragment"
+        android:name="com.example.pos.feature.input_uang_masuk.InputUangMasukFragment"
+        android:label="fragment_input_uang_masuk"
+        tools:layout="@layout/fragment_input_uang_masuk" />
+    <fragment
+        android:id="@+id/editUangMasukFragment"
+        android:name="com.example.pos.feature.edit_uang_masuk.EditUangMasukFragment"
+        android:label="fragment_edit_uang_masuk"
+        tools:layout="@layout/fragment_edit_uang_masuk" />
+</navigation>

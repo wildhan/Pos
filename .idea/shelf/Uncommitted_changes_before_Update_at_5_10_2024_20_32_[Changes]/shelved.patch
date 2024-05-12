@@ -1,0 +1,271 @@
+Index: app/src/main/res/layout/fragment_daftar_uang_masuk.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:padding=\"16dp\"\r\n    tools:context=\".feature.uang_masuk.DaftarUangMasukFragment\">\r\n\r\n    <TextView\r\n        android:id=\"@+id/tv_empty_record\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"@string/label_empty_record\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_daftar_uang_masuk.xml b/app/src/main/res/layout/fragment_daftar_uang_masuk.xml
+--- a/app/src/main/res/layout/fragment_daftar_uang_masuk.xml	(revision d94729961e7184ee8fcd4d1a2aec370c40d503fd)
++++ b/app/src/main/res/layout/fragment_daftar_uang_masuk.xml	(date 1715300553926)
+@@ -4,9 +4,48 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    android:padding="16dp"
+     tools:context=".feature.uang_masuk.DaftarUangMasukFragment">
+ 
++    <LinearLayout
++        android:id="@+id/ll_filter"
++        android:layout_width="match_parent"
++        android:layout_height="48dp"
++        android:gravity="center_vertical"
++        android:orientation="horizontal"
++        android:paddingHorizontal="16dp"
++        app:layout_constraintTop_toTopOf="parent">
++        <TextView
++            android:id="@+id/tv_filter"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:layout_weight="1"
++            android:text="25 Maret 2025 - 25 Maret 2025"/>
++
++        <ImageButton
++            android:id="@+id/btn_filter"
++            android:background="#00000000"
++            android:layout_width="36dp"
++            android:layout_height="36dp"
++            android:layout_marginStart="8dp"
++            android:scaleType="fitCenter"
++            android:src="@drawable/ic_calender"/>
++    </LinearLayout>
++
++    <androidx.recyclerview.widget.RecyclerView
++        android:layout_width="match_parent"
++        android:layout_height="0dp"
++        app:layout_constraintTop_toBottomOf="@+id/ll_filter"
++        app:layout_constraintBottom_toTopOf="@id/btn_to_input"
++        tools:itemCount="2"
++        tools:listitem="@layout/item_rv_uang_masuk"/>
++
++    <Button
++        android:id="@+id/btn_to_input"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_margin="16dp"
++        android:text="Buat Transaksi Uang Masuk"
++        app:layout_constraintBottom_toBottomOf="parent"/>
+     <TextView
+         android:id="@+id/tv_empty_record"
+         android:layout_width="wrap_content"
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"jbr-17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision d94729961e7184ee8fcd4d1a2aec370c40d503fd)
++++ b/.idea/misc.xml	(date 1715294428980)
+@@ -1,4 +1,3 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+Index: app/src/main/res/drawable/ic_calender.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_calender.xml b/app/src/main/res/drawable/ic_calender.xml
+new file mode 100644
+--- /dev/null	(date 1715297640634)
++++ b/app/src/main/res/drawable/ic_calender.xml	(date 1715297640634)
+@@ -0,0 +1,9 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="800dp"
++    android:height="800dp"
++    android:viewportWidth="24"
++    android:viewportHeight="24">
++  <path
++      android:pathData="M19,4L17,4L17,3a1,1 0,0 0,-2 0L15,4L9,4L9,3A1,1 0,0 0,7 3L7,4L5,4A3,3 0,0 0,2 7L2,19a3,3 0,0 0,3 3L19,22a3,3 0,0 0,3 -3L22,7A3,3 0,0 0,19 4ZM20,19a1,1 0,0 1,-1 1L5,20a1,1 0,0 1,-1 -1L4,12L20,12ZM20,10L4,10L4,7A1,1 0,0 1,5 6L7,6L7,7A1,1 0,0 0,9 7L9,6h6L15,7a1,1 0,0 0,2 0L17,6h2a1,1 0,0 1,1 1Z"
++      android:fillColor="#000000"/>
++</vector>
+Index: app/src/main/res/layout/item_rv_uang_masuk.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/item_rv_uang_masuk.xml b/app/src/main/res/layout/item_rv_uang_masuk.xml
+new file mode 100644
+--- /dev/null	(date 1715301204935)
++++ b/app/src/main/res/layout/item_rv_uang_masuk.xml	(date 1715301204935)
+@@ -0,0 +1,98 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    xmlns:app="http://schemas.android.com/apk/res-auto">
++
++    <androidx.cardview.widget.CardView
++        android:layout_width="match_parent"
++        android:layout_height="180dp"
++        android:layout_marginHorizontal="16dp"
++        android:layout_marginVertical="8dp"
++        app:cardCornerRadius="8dp"
++        app:cardBackgroundColor="@color/white"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintBottom_toBottomOf="parent">
++        <androidx.constraintlayout.widget.ConstraintLayout
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:layout_marginVertical="16dp"
++            android:layout_marginHorizontal="8dp">
++            <androidx.constraintlayout.widget.Guideline
++                android:id="@+id/gl_ver66"
++                android:layout_width="wrap_content"
++                android:layout_height="match_parent"
++                android:orientation="vertical"
++                app:layout_constraintGuide_percent="0.66"/>
++            <TextView
++                android:id="@+id/tv_info"
++                android:layout_width="0dp"
++                android:layout_height="wrap_content"
++                android:layout_marginHorizontal="6dp"
++                android:maxLines="1"
++                android:text="Dari Bos ke Kasir Perangkat 1"
++                app:layout_constraintTop_toTopOf="parent"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintEnd_toStartOf="@id/gl_ver66"/>
++
++            <TextView
++                android:id="@+id/tv_date"
++                android:layout_width="0dp"
++                android:layout_height="wrap_content"
++                android:layout_marginHorizontal="6dp"
++                android:gravity="end"
++                android:text="25/03/2025\n13:00"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintStart_toStartOf="@+id/gl_ver66"
++                app:layout_constraintTop_toTopOf="parent" />
++
++            <TextView
++                android:id="@+id/tv_notes"
++                android:layout_width="0dp"
++                android:layout_height="wrap_content"
++                android:layout_marginHorizontal="6dp"
++                android:layout_marginVertical="8dp"
++                android:maxLines="2"
++                android:text="Tamabahan Modal"
++                app:layout_constraintTop_toBottomOf="@id/tv_date"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintEnd_toStartOf="@id/gl_ver66"/>
++            <TextView
++                android:id="@+id/tv_amount"
++                android:layout_width="0dp"
++                android:layout_height="wrap_content"
++                android:layout_marginHorizontal="6dp"
++                android:layout_marginVertical="8dp"
++                android:gravity="end"
++                android:text="Rp100.000"
++                app:layout_constraintTop_toBottomOf="@id/tv_date"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintStart_toStartOf="@+id/gl_ver66"/>
++
++            <com.google.android.material.button.MaterialButton
++                android:id="@+id/btn_edit"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:textColor="@color/design_default_color_primary"
++                style="@style/Widget.MaterialComponents.Button.TextButton"
++                android:text="Ubah"
++                app:icon="@drawable/ic_edit"
++                app:iconTint="@color/design_default_color_primary"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintStart_toStartOf="parent"/>
++
++            <com.google.android.material.button.MaterialButton
++                android:id="@+id/btn_delete"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:textColor="@color/design_default_color_primary"
++                style="@style/Widget.MaterialComponents.Button.TextButton"
++                android:text="Hapus"
++                app:icon="@drawable/ic_delete"
++                app:iconTint="@color/design_default_color_primary"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintStart_toEndOf="@id/btn_edit"/>
++        </androidx.constraintlayout.widget.ConstraintLayout>
++    </androidx.cardview.widget.CardView>
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: .idea/deploymentTargetSelector.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"deploymentTargetSelector\">\r\n    <selectionStates>\r\n      <SelectionState runConfigName=\"app\">\r\n        <option name=\"selectionMode\" value=\"DROPDOWN\" />\r\n      </SelectionState>\r\n    </selectionStates>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deploymentTargetSelector.xml b/.idea/deploymentTargetSelector.xml
+--- a/.idea/deploymentTargetSelector.xml	(revision d94729961e7184ee8fcd4d1a2aec370c40d503fd)
++++ b/.idea/deploymentTargetSelector.xml	(date 1715301609948)
+@@ -4,6 +4,14 @@
+     <selectionStates>
+       <SelectionState runConfigName="app">
+         <option name="selectionMode" value="DROPDOWN" />
++        <DropdownSelection timestamp="2024-05-10T00:27:58.561116800Z">
++          <Target type="DEFAULT_BOOT">
++            <handle>
++              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\LENOVO\.android\avd\Pixel_API_34.avd" />
++            </handle>
++          </Target>
++        </DropdownSelection>
++        <DialogSelection />
+       </SelectionState>
+     </selectionStates>
+   </component>
+Index: app/src/main/res/drawable/ic_delete.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_delete.xml b/app/src/main/res/drawable/ic_delete.xml
+new file mode 100644
+--- /dev/null	(date 1715299941833)
++++ b/app/src/main/res/drawable/ic_delete.xml	(date 1715299941833)
+@@ -0,0 +1,13 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="800dp"
++    android:height="800dp"
++    android:viewportWidth="24"
++    android:viewportHeight="24">
++  <path
++      android:pathData="M6,7V18C6,19.105 6.895,20 8,20H16C17.105,20 18,19.105 18,18V7M6,7H5M6,7H8M18,7H19M18,7H16M10,11V16M14,11V16M8,7V5C8,3.895 8.895,3 10,3H14C15.105,3 16,3.895 16,5V7M8,7H16"
++      android:strokeLineJoin="round"
++      android:strokeWidth="2"
++      android:fillColor="#00000000"
++      android:strokeColor="#000000"
++      android:strokeLineCap="round"/>
++</vector>
+Index: app/src/main/res/drawable/ic_edit.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_edit.xml b/app/src/main/res/drawable/ic_edit.xml
+new file mode 100644
+--- /dev/null	(date 1715300073714)
++++ b/app/src/main/res/drawable/ic_edit.xml	(date 1715300073714)
+@@ -0,0 +1,10 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="800dp"
++    android:height="800dp"
++    android:viewportWidth="24"
++    android:viewportHeight="24">
++  <path
++      android:pathData="M20.848,1.879C19.676,0.707 17.777,0.707 16.605,1.879L2.447,16.036C2.029,16.455 1.743,16.989 1.627,17.569L1.04,20.505C0.76,21.904 1.994,23.138 3.393,22.858L6.329,22.271C6.909,22.155 7.443,21.869 7.862,21.451L22.019,7.293C23.191,6.121 23.191,4.222 22.019,3.05L20.848,1.879ZM18.019,3.293C18.41,2.902 19.043,2.902 19.434,3.293L20.605,4.464C20.996,4.855 20.996,5.488 20.605,5.879L17.933,8.55L15.348,5.964L18.019,3.293ZM13.933,7.379L3.862,17.451C3.722,17.59 3.627,17.768 3.588,17.962L3.001,20.897L5.936,20.31C6.13,20.271 6.308,20.176 6.447,20.036L16.519,9.964L13.933,7.379Z"
++      android:fillColor="#0F0F0F"
++      android:fillType="evenOdd"/>
++</vector>

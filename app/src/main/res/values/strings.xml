@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Pos</string>
+    <string name="label_empty_record">Record kosong</string>
+    <string name="label_hint_from">Dari</string>
+    <string name="label_hint_to">Masuk ke</string>
+    <string name="tv_upload_image">Foto/ Bukti Transfer/ Nota/ Kwitansi</string>
+    <string name="label_hint_type">Jenis</string>
+    <string name="label_hint_note">Keterangan</string>
+    <string name="label_hint_total">Jumlah</string>
+    <string name="label_save">Save</string>
+    <string name="text_from_to">Dari %1$s ke %2$s</string>
+    <string name="edit">Ubah</string>
+    <string name="delete">Hapus</string>
+    <string name="photo">Foto</string>
+</resources>
